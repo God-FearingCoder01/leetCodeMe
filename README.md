@@ -1,11 +1,11 @@
 # 🧠 leetCodeMe
 
-https://img.sheilds.io/badge/Python-3.8%252B-blue?logo=pytho&logoColor=white
-https://img.shields.io/badge/LeetCode-Solution-orange?logo=leetcode&logoColor=white
-https://img.shields.io/badge/PRs-welcome-brightgreen
-https://img.shields.io/badge/github/last-commit/%3CGod-FearingCoder01%3E/leetCodeMe
-https://img.shields.io/github/repo-size/%3CGod-FearingCoder01%3E/leetCodeMe
-https://img.shields.io/badge/license-MIT-blue
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![LeetCode](https://img.shields.io/badge/LeetCode-Solution-orange?logo=leetcode&logoColor=white)
+![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![last-commit](https://img.shields.io/badge/github/last-commit/God-FearingCoder01/leetCodeMe)
+![leetCodeMe](https://img.shields.io/github/repo-size/%3CGod-FearingCoder01%3E/leetCodeMe)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 📘 My personal journey of solving LeetCode problems - one commit at a time.
 
@@ -54,7 +54,7 @@ This is a personal practice repo, but if you spot a bug or hav an optimized veri
 
 ## 📫 Connect with Me
 
-https://img.shields.io/badge/GitHub-%3CGod-FearingCoder01%3E-181717?logo=github
-https://img.shields.io/badge/LinkedId-Nkosikhona_Mhlope-blue?logo=linkedin
+![My Github](https://img.shields.io/badge/GitHub-%3CGod-FearingCoder01%3E-181717?logo=github)
+![LinkedIn](https://img.shields.io/badge/LinkedId-Nkosikhona_Mhlope-blue?logo=linkedin)
 
 **🌟If this repo helps you in any way, consider giving it a star!🌟**
