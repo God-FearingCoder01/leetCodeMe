@@ -23,11 +23,11 @@ Whether you're here for inspiration, collaboration or just curiosoty - you're we
 
 ## 🛠️ Languages & Tools
 
-| Tool/Language                                                                       | Usage                       |
-| ----------------------------------------------------------------------------------- | --------------------------- |
-| https://img.shields.io/badge/Python-3776AB?logo=python&Color=white                  | Main language for solutions |
-| https://img.shields.io/badge/VS_Code-007AVV?logo=visual-studio-code&logoColor=white | Primary editor              |
-| https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white                    | version control             |
+| Tool/Language                                                                                   | Usage                       |
+| ----------------------------------------------------------------------------------------------- | --------------------------- |
+| ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)               | Main language for solutions |
+| ![VS Code](https://img.shields.io/badge/VS_Code-007AVV?logo=visual-studio-code&logoColor=white) | Primary editor              |
+| ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)                        | version control             |
 
 Each problem file is named as:  
 `<problem_number>_<problem_name>.py`
