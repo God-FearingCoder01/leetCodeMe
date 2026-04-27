@@ -47,7 +47,7 @@ class Solution:
                 free_space_slots -= 1
             while (word_index < ubound_line_words):
                 num_free_spaces_to_use = free_spaces // free_space_slots
-                line += line_words[word_index] + (word_space * num_free_space_to_use)
+                line += line_words[word_index] + (word_space * num_free_spaces_to_use)
                 free_spaces -= num_free_spaces_to_use
                 word_index += 1
                 free_space_slots -= 1
