@@ -55,24 +55,24 @@ class Solution:
         print(free_spaces, word_count, line_words, remaining_words)       # played a very pivotal role in debuging
         free_spaces += word_spaces
         if remaining_words != []:
-            while free_spaces % 2 != 0 and word_count != 1:
+            while word_count != 1:
                 line += line_words[word_index]+' '*(math.ceil(free_spaces/free_space_slots))
                 free_spaces -= math.ceil(free_spaces/free_space_slots)
                 free_space_slots -= 1
                 word_index += 1
                 word_count -= 1
-            while word_index < (ubound_line_words):
-                line += line_words[word_index]+' '*(math.ceil(free_spaces/free_space_slots))
-                free_spaces -= math.ceil(free_spaces/free_space_slots)
-                free_space_slots -= 1
-                word_index += 1
-                word_count -= 1
-                # if (free_space_slots%2 == 0):
-                #     line += line_words[word_index]+' '*(free_spaces // free_space_slots)
-                #     free_spaces -= (free_spaces // free_space_slots)
-                #     free_space_slots -= 1
-                #     word_index += 1
-                # else:
+            # while word_index < (ubound_line_words):
+            #     line += line_words[word_index]+' '*(math.ceil(free_spaces/free_space_slots))
+            #     free_spaces -= math.ceil(free_spaces/free_space_slots)
+            #     free_space_slots -= 1
+            #     word_index += 1
+            #     word_count -= 1
+            #     # if (free_space_slots%2 == 0):
+            #     #     line += line_words[word_index]+' '*(free_spaces // free_space_slots)
+            #     #     free_spaces -= (free_spaces // free_space_slots)
+            #     #     free_space_slots -= 1
+            #     #     word_index += 1
+            #     # else:
                     
             if original_word_count == 1: line += line_words[word_index] + ' '*(free_spaces) 
             else: line += line_words[word_index]

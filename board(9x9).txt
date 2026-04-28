@@ -1,0 +1,10 @@
+board(9x9)
+rows =  elemnts of the board
+transpose the board
+col =  elemnts of the board
+
+rows(board) => board_rows = elements of boards accessible via indexing (0-8) or for each loop
+rows(board_transpose) => board_columns = elements of board accesible via indexing (0-8) or for each loop
+most_populated(board) => most_filled_row -> dictionary of the index and the value
+most_populated(board_transpose) => most_filled_column
+fill_first => 
