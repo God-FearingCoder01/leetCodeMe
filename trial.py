@@ -1,74 +1,48 @@
-import math as m
 class Solution:
-    def fullJustify(self, words: list[str], maxWidth: int) -> list[str]:
-        line_free_spaces, line_words, remaining_words, line_last_space = self.helper(words, maxWidth)
-        justified_text = []
-        justified_line = self.create_line(line_free_spaces, line_words, remaining_words, line_last_space)
-        justified_text.append(justified_line)
-        while (remaining_words != []):
-            line_free_spaces, line_words, remaining_words, line_last_space = self.helper(remaiing_words, maxWidth)
-            justified_line = self.create_line(line_free_spaces, line_words, remaining_words, line_last_space)
-            justified_text.append(justified_line)
-        # print(justified_text)
+    BOARDSIZE = 9
+    def solveSudoku(self, board: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        board_rows = board
+        board_columns = transposer(board) 
+        if with_ha(highest_appearance(board_rows)):
+            
+
+    def transposer(self, board: list[list[str]]) -> list[str]:
+        transposed, column = [], column
+        for i in range(BOARDSIZE):
+            for row in board:
+                column.append(row[i])
+            transposed.append(column)
+            column.clear()
+        return transposed
+
+    def num_appearances(self, value: str, board: list[list[str]])  -> int:
+        value_count = 0
+        for row in board:
+            if value in row: value_count += 1
+        return value_count
+
+    def highest_appearance(self, board: list[list[str]]) -> dict[str:str]:
+        ha_dets = {}
+        highest_appearance = num(i, board)
+        for i in range(1, BOARDSIZE):
+            if self.num_appearance(i, board) > highest_appearance:
+                highest_appearance = num_appearance
+                ha_dets[i] = highest_appearance
+        return ha_dets
         
+    def with_ha(self, ha: dict[str:str]) -> bool:
+        for value, appearance_count in ha:
+            if appearance_count >= 5: return True
+        return False
 
-    def helper(self, words, max_width):
-        num_characters, last_space, line_words = 0, True, []
-        remaining_words = words.copy()
-        for word in words:
-            word_num_characters = len(word)
-            projected_num_characters = num_characters + word_num_characters
-            num_space_available = max_width - projected_num_characters
-            space_is_available = True if num_space_available > 0 else False
-            just_enough = True if num_space_available == 0 else False
-            if space_is_available: num_characters = projected_num_characters + 1 # the word's space
-            elif just_enough:
-                num_characters = projected_num_characters
-                last_space = False
-            else: break
-            line_words.append(remaining_words.pop(remaining_words.index(word)))
-        free_spaces = max_width - num_characters
-        return (free_spaces, line_words, remaining_words, last_space)
-
-    def create_line(self, free_spaces, line_words, remaining_words, need_last_word_space):
-        word_index, word_count, line, word_space = 0, len(line_words), "", ' '
-        free_space_slots = ubound_line_words = (word_count - 1)        
-        word_spaces = word_count if need_last_word_space else free_space_slots
-        free_spaces += word_spaces
-        original_word_count = word_count
-        print(free_spaces, word_count, line_words, remaining_words)
-        if (remaining_words != []):
-            while (free_spaces%2 != 0) and (word_count != 1):
-                num_free_spaces_to_use = m.ceil(fress_spaces / free_space_slots)
-                line += line_words[word_index] + (word_space * num_free_spaces_to_use)
-                free_spaces -= num_free_spaces_to_use
-                word_count -= 1
-                word_index += 1
-                free_space_slots -= 1
-            while (word_index < ubound_line_words):
-                num_free_spaces_to_use = free_spaces // free_space_slots
-                line += line_words[word_index] + (word_space * num_free_spaces_to_use)
-                free_spaces -= num_free_spaces_to_use
-                word_index += 1
-                free_space_slots -= 1
-            if original_word_count == 1: line += line_words[word_index]+(word_space*free_spaces) 
-            else: line += line_words[word_index]
-            # else:
-            #     while (word_index < ubound_line_words):
-            #         line += line_words[word_index] + word_space
-            #         free_spaces -= 1
-            #         word_index += 1
-            #     line += line_words[word_index] + (word_space * free_spaces)
-        else:
-            while (word_index < ubound_line_words):
-                line += line_words[word_index] + word_space
-                free_spaces -= 1
-                word_index += 1
-            line += line_words[word_index] + (word_space * free_spaces)
-        return line
-
-
-words = ["This", "is", "an", "example", "of", "text", "justification."]
-maxWidth = 16                        
-my_sol = Solution()
-my_sol.fullJustify(words, maxWidth)
+    def get_thirds(self, board: list[str],x: int, y: int) -> list[str]:
+        thirds = []
+        for i in range(x, x+3):
+            for j in range(y, y+3):
+                thirds.apppend(board[i][j])
+        return thirds
+    
+        
