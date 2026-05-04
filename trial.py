@@ -6,17 +6,14 @@ class Solution:
         """
         board_rows = board
         board_columns = self.transposer(board) 
-        # print(board_rows)
+        # print(board)
         # print(board_columns)
         for board_row in board_rows:
             if board_row.count('.'): break
             else: return None
-        for i in range(self.BOARDSIZE): 
-            if board[i].count('.') > 0: break
-            else: return None
         ha = self.highest_appearance(board_rows) # getting value(s) with highest appearance
         if self.with_ha(ha):         # checking if value is worthy exploring
-            for most_frequent in ha:    # getting that value
+            for most_frequent in ha.values():    # getting that value
                 for i in range(0, self.BOARDSIZE, 3):
                     for j in range(0, self.BOARDSIZE, 3):
                         thirds_ij = self.get_thirds(board_rows, i, j)
@@ -42,7 +39,8 @@ class Solution:
                                     available_boxes.append((available_row_index, available_col_index))
 
                             if len(available_boxes) == 1: 
-                                board[available_boxes[0]][available_boxes[1]]
+                                board[available_boxes[0]][available_boxes[1]] = most_frequent
+                                print(board)
                                 self.solveSudoku(board)
                             else:
                                 for box in available_boxes:
@@ -112,7 +110,10 @@ class Solution:
                                         if number in board_rows[affacted_row_index]:
                                             strikes += 1
                             if strikes == 2:
+                                print(f"At point ({y}, {x}), we are placing {number}")
                                 board[y][x] = number
+                                print("Such that the board becomes:")
+                                print(board)
                                 self.solveSudoku(board)
                         else:
                             for x in range((i//3)*3, ((i//3)*3)+3, 3):
