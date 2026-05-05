@@ -12,18 +12,10 @@ class Solution:
         for self.highest_appearing in self.most_appearing(self.board_horizontal):
             print(self.highest_appearing)
             for self.x in range(0, self.BOARDSIZE, 3): 
-                for self.y in range(0, self.BOARDSIZE, 3):
+                for self.y in range(0+(self.x), self.BOARDSIZE, 3):
                     print(f"self.x = {self.x} and self.y = {self.y}")
                     print("'self.x == self.y' is ", self.x == self.y)
                     if self.x == self.y:
-                        if self.highest_appearing in self.sub_grid(self.sub_board(self.board_horizontal, self.x, self.y)): continue
-                        else:
-                            self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.x, self.y), self.x)
-                            self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.x, self.y), self.y)
-                            if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
-                                board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
-                                print(board)
-                    else:
                         if self.highest_appearing in self.sub_grid(self.sub_board(self.board_horizontal, self.x, self.y)): continue
                         else:
                             self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.x, self.y), self.x)
@@ -31,10 +23,17 @@ class Solution:
                             if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
                                 board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
                                 print(board)
-                        if self.highest_appearing in self.sub_grid(self.sub_board(self.board_vertical, self.y, self.x)): continue
-                        else:
+                    else:
+                        if not self.highest_appearing in self.sub_grid(self.sub_board(self.board_horizontal, self.x, self.y)):
                             self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.x, self.y), self.x)
-                            self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.x, self.y), self.y)
+                            self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.y, self.x), self.y)
+                            if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
+                                board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
+                                print(board)
+                        if self.highest_appearing in self.sub_grid(self.sub_board(self.board_vertical, self.x, self.y)): continue
+                        else:
+                            self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.y, self.x), self.y)
+                            self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.x, self.y), self.x)
                             if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
                                 board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
                                 print(board)
