@@ -4,6 +4,11 @@ class Solution:
         """
         Do not return anything, just change thhe board in-place.
         """
+        self.row_count_unfilled_spots = 0
+        for row in board: 
+            if row.count('.'): self.row_count_unfilled_spots += 1 
+        if self.row_count_unfilled_spots == 0: return None
+
         self.board_horizontal = board
         # print(self.board_horizontal)
         self.board_vertical = self.transposed(board)
@@ -22,9 +27,10 @@ class Solution:
                         else:
                             self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.x, self.y), self.x)
                             self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.y, self.x), self.y)
-                            board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
-                            print(board)
-                            # if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
+                            # self.solveSudoku(board)
+                            if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
+                                board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
+                                print(board)
                                 
                             # else:
                             #     if self.free_rows > 1:
@@ -37,17 +43,19 @@ class Solution:
                         if not self.highest_appearing in self.sub_grid(self.sub_board(self.board_horizontal, self.x, self.y)):
                             self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.x, self.y), self.x)
                             self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.y, self.x), self.y)
-                            # if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
-                            board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
-                            print(board)
+                            if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
+                                board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
+                                print(board)
+                            # self.solveSudoku(board)
                         if self.highest_appearing in self.sub_grid(self.sub_board(self.board_vertical, self.x, self.y)): continue
                         else:
                             self.free_rows = self.not_present(self.highest_appearing, self.board_horizontal, self.sub_board(self.board_horizontal, self.y, self.x), self.y)
                             self.free_cols = self.not_present(self.highest_appearing, self.board_vertical, self.sub_board(self.board_vertical, self.x, self.y), self.x)
-                            # if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
-                            print("Here here...")
-                            board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
-                            print(board)
+                            if len(self.free_rows) == 1 and len(self.free_cols) == 1: 
+                                print("Here here...")
+                                board[self.free_rows[0]][self.free_cols[0]] = self.highest_appearing
+                                print(board)
+                            # self.solveSudoku(board)
         print("LAPHA!!!!!!!!!!!!!!!!1111")
         for self.i in range(self.BOARDSIZE):
             # print("u 'self.i' yena = ",self.i)
@@ -69,9 +77,10 @@ class Solution:
                     self.possible_cv += self.value
                 print(f"for cell [{self.i}][{self.j}], possible values are: {self.possible_cv}")
                 if len(self.possible_cv) != 1: continue
-                self.board_horizontal[self.i][self.j] = self.possible_cv[0]
+                board[self.i][self.j] = self.possible_cv[0]
                 print("~~~~~~~~~~~~Technique 1~~~~~~~~~~~~~~~~~~")
-                print(self.board_horizontal)
+                print(board)
+        self.solveSudoku(board)
 
 
 
