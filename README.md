@@ -30,15 +30,16 @@ Whether you're here for inspiration, collaboration or just curiosoty - you're we
 | ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)                        | version control             |
 
 Each problem file is named as:  
-`<problem_number>_<problem_name>.py`
+`<problem_number>-<problem_name>.py`  
+Example" [`68-Text_Justification.py`](./68-Text_Justification.py)
 
 ## 📈 Progress Tracking
 
-| Category | Solved |
-| -------- | ------ |
-| Easy     |        |
-| Medium   |        |
-| Hard     |        |
+| Category | Solved (Problem No.)                                         |
+| -------- | ------------------------------------------------------------ |
+| Easy     |                                                              |
+| Medium   | [2657](./2657-findThePrefixCommonArray.py)                   |
+| Hard     | [36](./36-Valid_Sudoku.py), [68](./68-Text_Justification.py) |
 
 ## ✅ Recent Additions
 
