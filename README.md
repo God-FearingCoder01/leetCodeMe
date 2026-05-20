@@ -31,15 +31,15 @@ Whether you're here for inspiration, collaboration or just curiosoty - you're we
 
 Each problem file is named as:  
 `<problem_number>-<problem_name>.py`  
-Example" [`68-Text_Justification.py`](./68-Text_Justification.py)
+Example: `68-Text_Justification.py`
 
 ## 📈 Progress Tracking
 
-| Category | Solved (Problem No.)                                         |
-| -------- | ------------------------------------------------------------ |
-| Easy     |                                                              |
-| Medium   | [2657](./2657-findThePrefixCommonArray.py)                   |
-| Hard     | [36](./36-Valid_Sudoku.py), [68](./68-Text_Justification.py) |
+| Category | Solved (Problem No.)                                                   |
+| -------- | ---------------------------------------------------------------------- |
+| Easy     |                                                                        |
+| Medium   | [36](./36-Valid_Sudoku.py), [2657](./2657-findThePrefixCommonArray.py) |
+| Hard     | [68](./68-Text_Justification.py)                                       |
 
 ## ✅ Recent Additions
 
